@@ -1,0 +1,6 @@
+{
+  "name": "Lumina",
+  "description": "Tu espacio personal de bienestar y productividad para organizar hábitos, metas, tareas, notas, fotos, calendario y recordatorios.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

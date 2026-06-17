@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+}
+
+/* Custom Webkit scrollbars for premium dark feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F0F14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22222F;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7C6AF7;
+}
+
+/* Wave animation for the Habit Jar filling liquid */
+@keyframes waveAnim {
+  0% {
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, 0) rotate(360deg);
+  }
+}
+
+.animate-wave {
+  animation: waveAnim 12s linear infinite;
+}
+
+/* Line-through completed task transition */
+.task-line-through {
+  position: relative;
+}
+
+.task-line-through::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1.5px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.task-completed .task-line-through::after {
+  transform: scaleX(1);
+}
+
+/* Glassmorphism support */
+.glass-sidebar {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(26, 26, 36, 0.85);
+}
+
+/* Smooth custom transition ease */
+.transition-all-custom {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
